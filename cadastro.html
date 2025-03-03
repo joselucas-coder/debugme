@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cadastro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <nav>
+        <a class="principal" href="index.html" aria-current="page">
+          <img class="logo" src="assets/debugme.png" alt="logo" />
+        </a>
+
+        <input class="navegacao" type="text" placeholder="Pesquisar" />
+
+        <div class="perfil"> 
+          <a class="secundaria" href="#"> 
+            <img class="login" src="assets/user.png" alt="logo" />
+          </a>
+          <div id="dropdown" class="dropdown-content">
+            <a href="cadastro.html">Cadastro</a>
+            <a href="login.html">Login</a>
+          </div>
+        </div>
+
+      </nav>
+
+    </div> 
+
+    <main>
+      <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form id="cadastro-form">
+          <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone (opcional):</label>
+            <input type="tel" id="telefone" name="telefone">
+          </div>
+          <button type="submit">Cadastrar</button>
+        </form>
+        <p id="mensagem-sucesso" style="display: none; color: green;">Cadastro realizado com sucesso!</p>
+      </div>
+    </main>
+    <script>
+      document.getElementById('cadastro-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('mensagem-sucesso').style.display = 'block'; // Mostra a mensagem de sucesso
+        setTimeout(function() {
+          window.location.href = 'login.html';
+        }, 2000); // Redireciona após 2 segundos
+      });
+    </script>
+  </body>
+</html>

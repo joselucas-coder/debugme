@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <nav>
+        <a class="principal" href="index.html" aria-current="page">
+          <img class="logo" src="assets/debugme.png" alt="logo" />
+        </a>
+
+        <input class="navegacao" type="text" placeholder="Pesquisar" />
+
+        <div class="perfil"> 
+          <a class="secundaria" href="#"> 
+            <img class="login" src="assets/user.png" alt="logo" />
+          </a>
+          <div id="dropdown" class="dropdown-content">
+            <a href="cadastro.html">Cadastro</a>
+            <a href="login.html">Login</a>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+
+    <main>
+        <div class="perfil-container">
+          <div class="perfil-header">
+            <img src="assets/perfil.png" alt="Foto de perfil" id="foto-perfil">
+            <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+            <button id="mudar-foto">Mudar foto</button>
+            <h2>Nome do Usuário</h2>
+          </div>
+          <div class="perfil-info">
+            <h3>Informações de Cadastro</h3>
+            <p><strong>Nome completo:</strong> Nome Completo do Usuário</p>
+            <p><strong>E-mail:</strong> email@example.com</p>
+            <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+          </div>
+          <div class="perfil-bio">
+            <h3>Biografia</h3>
+            <p>Uma breve descrição sobre o usuário.</p>
+          </div>
+          <div class="perfil-feedback">
+            <h3>Feedback sobre o site</h3>
+            <p>Comentários e avaliações do usuário sobre o site.</p>
+          </div>
+        </div>
+      </main>
+  
+      <script>
+        document.getElementById('mudar-foto').addEventListener('click', function() {
+          document.getElementById('upload-foto').click();
+        });
+  
+        document.getElementById('upload-foto').addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              document.getElementById('foto-perfil').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      </script>
+    </body>
+</html>

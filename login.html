@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <nav>
+        <a class="principal" href="index.html" aria-current="page">
+          <img class="logo" src="assets/debugme.png" alt="logo" />
+        </a>
+
+        <input class="navegacao" type="text" placeholder="Pesquisar" />
+
+        <div class="perfil"> 
+          <a class="secundaria" href="#"> 
+            <img class="login" src="assets/user.png" alt="logo" />
+          </a>
+          <div id="dropdown" class="dropdown-content">
+            <a href="cadastro.html">Cadastro</a>
+            <a href="login.html">Login</a>
+          </div>
+        </div>
+
+      </nav>
+
+    </div> 
+
+    <main>
+      <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </main>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          window.location.href = 'perfil.html'; // Redireciona para perfil.html
+        });
+      </script>
+      
+  </body>
+</html>
