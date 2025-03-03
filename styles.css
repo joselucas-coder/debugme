@@ -60,7 +60,7 @@ h1 {
 }
 
 .topnav input.navegacao {
-  width: 8cm;
+  width: 10cm;
   height: 35px;
   border-radius: 4px;
   border-width: 0;
@@ -73,5 +73,25 @@ h1 {
   top: 0;
   left: 0;
   margin: 5px;
-  width: 30px;
+  width: 25px;
+}
+
+
+.logocentral{
+
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 100px;
+flex-direction: column;
+}
+
+.logocentral button.botaocentral{
+margin-top: 50px;
+width: 130px;
+height: 40px;
+border-width: 0;
+background-color: #0F62FE;
+color: #eee;
+font-weight: bold;
 }
